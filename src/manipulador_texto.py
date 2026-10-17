@@ -42,8 +42,8 @@ def es_palindromo(cadena):
     if not cadena:
         return False
 
-    # BUG 1: No maneja espacios ni mayúsculas/minúsculas
-    cadena_limpia = cadena
+    # Ignorar espacios y mayúsculas/minúsculas
+    cadena_limpia = cadena.replace(" ", "").lower()
     return cadena_limpia == cadena_limpia[::-1]
 
 def eliminar_duplicados(cadena):

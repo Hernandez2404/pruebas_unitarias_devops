@@ -6,3 +6,4 @@ __pycache__/
 .coverage
 htmlcov/
 taller_pruebas_unitarias_devops.md
+.obsidian/

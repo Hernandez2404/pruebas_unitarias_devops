@@ -1,0 +1,25 @@
+name: Pruebas unitarias
+
+on: [push, pull_request]
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar pruebas con cobertura
+        run: >
+          pytest tests/test_calculadora.py tests/test_descuentos.py tests/test_conversor.py -v
+          --cov=src.calculadora --cov=src.descuentos --cov=src.conversor
+          --cov-report=term-missing --cov-fail-under=85

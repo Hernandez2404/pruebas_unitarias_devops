@@ -23,6 +23,8 @@ def dividir(a, b):
 
 def potencia(base, exponente):
     """Calcula la potencia de un número."""
+    if base == 0 and exponente < 0:
+        raise ValueError("No se puede elevar cero a un exponente negativo")
     return base ** exponente
 
 def raiz_cuadrada(numero):

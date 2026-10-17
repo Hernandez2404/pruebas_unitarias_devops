@@ -174,3 +174,13 @@ Las imágenes de la carpeta `evidencias/` no son capturas de pantalla manuales. 
 - Una cobertura del 100 % no significa que el código sea correcto, y en particular no detecta validaciones ausentes.
 - El ciclo rojo → evidencia → corrección → commit aporta trazabilidad y es la base de la integración continua.
 - La IA acelera la escritura de pruebas y el diagnóstico, pero el comportamiento esperado cuando el código es ambiguo requiere criterio humano, y cada sugerencia se verificó ejecutando las pruebas.
+
+## 7. Reflexión personal
+
+En la resolución del taller aprendí que probar código no es confirmar que funciona, sino buscar dónde falla. Lo que más me marcó fue entender que una prueba en rojo no es un error mío, sino un hallazgo: `minimo` escondía un bug que ninguna prueba "cómoda" iba a mostrar.
+
+También me quedó claro algo incómodo: llegar al 100 % de cobertura se siente como haber terminado, pero no lo es. Ese número dice que todo se ejecutó, no que todo esté bien.
+
+Resolví el taller apoyándome en una IA, y eso me enseñó a no limitarme a aceptar lo que proponía. Puse la regla de no tocar el código sin mi permiso y pregunté qué era cada archivo y cada comando antes de avanzar. Cuando el código era ambiguo, como en `potencia`, aprendí que decidir qué es "correcto" también es parte de probar. La IA hizo el trabajo más rápido; entenderlo me tocó a mí.
+
+Me quedo con una costumbre nueva: antes de escribir una función, preguntarme qué entrada la rompería.

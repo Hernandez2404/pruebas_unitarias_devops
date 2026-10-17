@@ -3,6 +3,8 @@ Módulo de manipulación de cadenas y texto.
 ATENCIÓN: Hay 2 bugs ocultos en este archivo.
 """
 
+import string
+
 def invertir_cadena(cadena):
     """Invierte una cadena de texto."""
     if not cadena:
@@ -93,8 +95,10 @@ def dividir_en_palabras(cadena):
     if not cadena:
         return []
 
-    # BUG 2: No maneja múltiples espacios ni puntuación
-    return cadena.split(' ')
+    # split() sin argumento separa por cualquier espacio en blanco (también tabs y saltos de línea)
+    signos = string.punctuation + "¿¡"
+    palabras = (palabra.strip(signos) for palabra in cadena.split())
+    return [palabra for palabra in palabras if palabra]
 
 def extraer_dominio(email):
     """Extrae el dominio de un email."""
